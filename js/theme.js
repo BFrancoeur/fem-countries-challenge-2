@@ -30,7 +30,7 @@ function toggleTheme() {
     } else {
         setTheme('theme-light');
         // document.querySelector('.theme-light').checked = false;
-        // console.log(localStorage);
+        console.log(localStorage);
     }
  })();
 
