@@ -1,38 +1,39 @@
-function setTheme(themeName) { // how is this being set? 
-    console.log(themeName);
+function setTheme(themeName) { // this works
     localStorage.setItem('theme', themeName);
-    document.documentElement.className = themeName;
+    // document.documentElement.className = themeName;
     console.log('setTheme: ' + themeName);
 }
 
- let themeToggle = document.querySelector('.theme-select');
- themeToggle.addEventListener('click', toggleTheme);
-
 // toggle between light and dark theme
 function toggleTheme() {
+   const labelThemeSelect = document.getElementById('label-theme-select');
     console.log('toggleTheme');
    if (localStorage.getItem('theme') === 'theme-dark'){
-       let labelThemeSelect = document.getElementById('label-theme-dark');
-       setTheme('theme-dark');
-       labelThemeSelect.innerHTML = '<i class="fas fa-moon></i>Dark Mode';
-       console.log(labelThemeSelect);
-   } else {
     labelThemeSelect.innerHTML = '';
        setTheme('theme-light');
        labelThemeSelect.innerHTML = '<i class="fas fa-sun></i>Light Mode';
-       console.log(labelThemeSelect);
+       console.log(labelThemeSelect[0]);
+   } else {
+    labelThemeSelect.innerHTML = '';
+       setTheme('theme-dark');
+       labelThemeSelect.innerHTML = '<i class="fas fa-moon></i>Dark Mode';
+       console.log(labelThemeSelect[0]);
    }
 }
 
-// Immediately invoked function to set the theme on initial load
-(function () {
-    if (localStorage.getItem('theme') === 'theme-light') {
-        setTheme('theme-light');
-        document.getElementById('theme-select').checked = false;
+// Immediately invoked function to set the theme to localStorage value on load
+(function () { // this works
+    if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+        document.querySelector('.theme-dark').checked = true;
         console.log(localStorage);
     } else {
-        setTheme('theme-dark');
-        document.getElementById('theme-select').checked = true;
+        setTheme('theme-light');
+        // document.querySelector('.theme-light').checked = false;
         console.log(localStorage);
     }
  })();
+
+let themeToggle = document.querySelector('#checkbox-theme-select');
+console.log('themeToggle: ' + themeToggle);
+themeToggle.addEventListener('change', toggleTheme);
