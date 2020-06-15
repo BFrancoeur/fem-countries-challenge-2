@@ -1,39 +1,47 @@
-function setTheme(themeName) { // this works
+function setTheme(themeName) { // this runs second
     localStorage.setItem('theme', themeName);
-    // document.documentElement.className = themeName;
-    console.log('setTheme: ' + themeName);
+    document.documentElement.className = themeName;
+
+    setThemeLabel(themeName);
 }
 
-// toggle between light and dark theme
-function toggleTheme() {
-   const labelThemeSelect = document.getElementById('label-theme-select');
-    console.log('toggleTheme');
+function setThemeLabel(themeName) {
+    let labelCheckbox = document.getElementById('label');
+    labelCheckbox.innerHTML = '';
+
+    if (themeName !== 'theme-light') {
+        labelCheckbox.classList.add('dark')
+        labelCheckbox.classList.remove('light');
+        labelCheckbox.innerHTML = '<i class="fas fa-moon"></i>Dark Mode';
+    } else {
+        labelCheckbox.classList.add('light');
+        labelCheckbox.classList.remove('dark');
+        labelCheckbox.innerHTML = '<i class="fas fa-sun"></i>Light Mode';
+    }
+}
+
+function toggleTheme() { // this runs last
+
    if (localStorage.getItem('theme') === 'theme-dark'){
-    labelThemeSelect.innerHTML = '';
        setTheme('theme-light');
-       labelThemeSelect.innerHTML = '<i class="fas fa-sun></i>Light Mode';
-       console.log(labelThemeSelect[0]);
+      
    } else {
-    labelThemeSelect.innerHTML = '';
        setTheme('theme-dark');
-       labelThemeSelect.innerHTML = '<i class="fas fa-moon></i>Dark Mode';
-       console.log(labelThemeSelect[0]);
+       
    }
 }
 
+let themeToggle = document.querySelector('#checkbox');
+
+themeToggle.addEventListener('change', toggleTheme);
+
 // Immediately invoked function to set the theme to localStorage value on load
-(function () { // this works
+(function () { // this runs first
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-dark');
-        document.querySelector('.theme-dark').checked = true;
         console.log(localStorage);
-    } else {
+    } else if ( localStorage.getItem('theme') === 'theme-light') {
         setTheme('theme-light');
-        // document.querySelector('.theme-light').checked = false;
         console.log(localStorage);
     }
  })();
-
-let themeToggle = document.querySelector('#checkbox-theme-select');
-console.log('themeToggle: ' + themeToggle);
-themeToggle.addEventListener('change', toggleTheme);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-dark">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,28 +12,29 @@
         <header id="site-header">
             <div class="inner-wrap">
                 <h1 id="site-name">Where in the world?</h1> 
-                <label for="checkbox-theme-select" id="label-theme-dark"><i class="fas fa-moon"></i>Dark Mode
-                    <input type="checkbox" id="checkbox-theme-select" name="checkbox-theme-select" checked>
-                </label>
+                <label for="checkbox" id="label"></label>
+                <input type="checkbox" id="checkbox" name="checkbox">
             </div>
         </header>
 
         <main id="main">
             <div class="inner-wrap">
-                <div id="search-wrap">
-                <form action="">
-                    <i class="fas fa-search"></i><input id="search" type="search" name="search" placeholder="Search for a country..." style="color: #fff;"/>
-                    <select id="filter">
-                        <option value="">Filter by Region</option>
-                        <option value="africa">Africa</option>
-                        <option value="americas">Americas</option>
-                        <option value="asia">Asia</option>
-                        <option value="europe">Europe</option>
-                        <option value="oceania">Oceania</option>
-                    </select>
-                </form>
-            </div>
-            <ul id="countries"></ul> 
+                <div id="top-wrap">
+                    <form action="">
+                        <div id="search-wrap">
+                            <i class="fas fa-search"></i><input id="search" type="search" name="search" placeholder="Search for a country..." style="color: #fff;"/>
+                        </div>
+                        <select id="filter">
+                            <option value="">Filter by Region</option>
+                            <option value="africa">Africa</option>
+                            <option value="americas">Americas</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="oceania">Oceania</option>
+                        </select>
+                    </form>
+                </div>
+                <ul id="countries"></ul> 
             </div>
         </main>
           
