@@ -39,9 +39,7 @@ themeToggle.addEventListener('change', toggleTheme);
 (function () { // this runs first
     if (localStorage.getItem('theme') === 'theme-dark') {
         setTheme('theme-dark');
-        console.log(localStorage);
     } else if ( localStorage.getItem('theme') === 'theme-light') {
         setTheme('theme-light');
-        console.log(localStorage);
     }
  })();
