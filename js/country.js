@@ -1,6 +1,5 @@
 
 getCountryDetails(window.location.search.slice(6), false);
-
         // get country
         function getCountryDetails(name, isBorder) {
             if(isBorder) {
@@ -30,48 +29,56 @@ getCountryDetails(window.location.search.slice(6), false);
 
            articleContainer.innerHTML = `
                 <div id="col1" class="column">
-                    <img src="${country.flag}"/>
+                    <img class="flag" src="${country.flag}"/>
                 </div>
                 <div id="col2-details" class="column"> 
                     <h2 id="country-name">${country.name}</h2>      
                     <dl id="details-content">
                         <div>
-                            <dt class="detail-label">Native Name </dt>
+                            <dt class="detail-label"><strong>Native Name</strong></dt>
                             <dd class="detail-description">${country.nativeName}</dd>
                         </div>
                         <div>
-                            <dt class="detail-label">Population </dt>
+                            <dt class="detail-label"><strong>Population</strong></dt>
                             <dd class="detail-description">${country.population}</dd>
                         </div>
                         <div>
-                            <dt class="detail-label">Region </dt>
+                            <dt class="detail-label"><strong>Region</strong></dt>
                             <dd class="detail-description">${country.region}</dd>
                         </div>
                         <div>
-                            <dt class="detail-label">Sub Region </dt>
+                            <dt class="detail-label"><strong>Sub Region</strong></dt>
                             <dd class="detail-description">${country.subregion}</dd>
                         </div>
                         <div>
-                            <dt class="detail-label">Capital </dt>
+                            <dt class="detail-label"><strong>Capital</strong></dt>
                             <dd class="detail-description">${country.capital}</dd>
                         </div>
                         <div>
-                            <dt class="detail-label">Top Level Domain </dt>
+                            <dt class="detail-label"><strong>Top Level Domain</strong></dt>
                             <dd class="detail-description">${country.topLevelDomain}</dd>
                         </div>
                         <div>
-                            <dt class="detail-label">Currencies </dt>
+                            <dt class="detail-label"><strong>Currencies</strong></dt>
                             <dd class="detail-description">${country.currencies[0].name}</dd>
                         </div>
                         <div>
-                            <dt class="detail-label">Languages </dt>
+                            <dt class="detail-label"><strong>Languages</strong></dt>
                             <dd class="detail-description">${country.languages[0].name}</dd>
+                        </div>
+                        <div id="border-countries">
+                            <ul id="border-list"><strong>Border Countries: </strong></ul>
                         </div>
                     </dl>
                 </div>
             `;
 
-            getBorderCountryNames(country.borders);
-            
+           country.borders.forEach(countryCode => {
+                let borderCountriesListElem = document.getElementById('border-list');
+                var li = document.createElement('li');
+                li.innerHTML = countryCode + ', ';
+                
+                borderCountriesListElem.appendChild(li);
+            }); 
             articleContainer.appendChild(div);
         }

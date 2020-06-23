@@ -208,6 +208,7 @@ body#body-details {
 
 .country-item .flag {
     width: 100%;
+    background-size: cover;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -288,6 +289,15 @@ dd.detail-description {
     flex: 1 0 50%;
 }
 
+#col1 img {
+    width: 100%;
+    background-size: cover;
+}
+
+#col2-details {
+    padding-left: 4rem;
+}
+
 #details-content div {
     display: flex;
     justify-content: flex-start;
@@ -295,11 +305,25 @@ dd.detail-description {
 }
 
 #details-content div dt {
-    flex: 1 0 20%;
+    flex: 1 0 22%;
 }
 #details-content div dd {
     flex: 1 0 80%;
     padding-left: 1rem;
+}
+
+#border-list {
+    display: flex;
+    list-style-type: none;;
+}
+
+
+#border-list li {
+    flex: 1 0 2%;
+    font-size: 16px;
+    color: var(--font-color);
+    padding: 0 2px;
+    margin: 0 0 0 22px;
 }
 
 @media(max-width: 768px) {
@@ -334,4 +358,14 @@ dd.detail-description {
         max-width: 100%;
         margin: 1rem;
     }
+
+    #content {
+        flex-wrap: wrap;
+    }
+
+    #col2-details {
+        padding-left: 0;
+    }
+
+
 }
