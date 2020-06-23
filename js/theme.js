@@ -10,12 +10,12 @@ function setThemeLabel(themeName) {
     labelCheckbox.innerHTML = '';
 
     if (themeName !== 'theme-light') {
-        labelCheckbox.classList.add('dark')
-        labelCheckbox.classList.remove('light');
+        labelCheckbox.classList.add('theme-dark')
+        labelCheckbox.classList.remove('theme-light');
         labelCheckbox.innerHTML = '<i class="fas fa-moon"></i>Dark Mode';
     } else {
-        labelCheckbox.classList.add('light');
-        labelCheckbox.classList.remove('dark');
+        labelCheckbox.classList.add('theme-light');
+        labelCheckbox.classList.remove('theme-dark');
         labelCheckbox.innerHTML = '<i class="fas fa-sun"></i>Light Mode';
     }
 }
@@ -41,5 +41,7 @@ themeToggle.addEventListener('change', toggleTheme);
         setTheme('theme-dark');
     } else if ( localStorage.getItem('theme') === 'theme-light') {
         setTheme('theme-light');
+    } else {
+        setTheme('theme-dark');
     }
  })();
