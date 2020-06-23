@@ -54,12 +54,18 @@ function fillCountriesList(array) {
     <div class="details">
         <h2>${country.name}</h2>
         <dl class="details-content">
-            <dt class="detail-label"><strong>Population</strong></dt>
-            <dd class="detail-description">${country.population}</dd>
-            <dt class="detail-label"><strong>Capital</strong></dt>
-            <dd class="detail-description">${country.capital}</dd>
-            <dt class="detail-label"><strong>Region</strong></dt>
-            <dd class="detail-description">${country.region}</dd>
+            <div>
+                <dt class="detail-label"><strong>Population</strong></dt>
+                <dd class="detail-description">${country.population}</dd>
+            </div>
+            <div>
+                <dt class="detail-label"><strong>Capital</strong></dt>
+                <dd class="detail-description">${country.capital}</dd>
+            </div>
+            <div>
+                <dt class="detail-label"><strong>Region</strong></dt>
+                <dd class="detail-description">${country.region}</dd>
+            </div>
         </dl>
     </div>
    `;

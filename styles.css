@@ -189,7 +189,7 @@ body#body-details {
     position: relative;
     flex: 1 0 21.5%;
     max-width: 25%;
-    padding-bottom: 10rem;
+    padding-bottom: 14rem;
     margin: 1.5%;
     color: var(--font-color);
     background-color: var(--color-elements);
@@ -208,6 +208,7 @@ body#body-details {
 
 .country-item .flag {
     width: 100%;
+    background-size: cover;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -218,9 +219,23 @@ body#body-details {
     padding: 2rem;
 }
 
-/* .details-content {
+.details div {
     display: flex;
-    max-width: 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.details div dt,
+.details div dd {
+    flex: 1 0 50%;
+}
+
+.details div dd {
+    padding-left: 2rem;
+}
+
+/* #details-content div > * {
+    display: inline-block;
 } */
 
 dt.detail-label {
@@ -233,8 +248,82 @@ dt.detail-label::after {
 
 dd.detail-description {
     padding: 0;
-    margin: -1.2rem 0 0 100px;
+    margin: 0;
     line-height: 1.5;
+}
+
+#btn-wrap {
+    padding: 3rem 1.5%;
+}
+
+#btn-back {
+    position: relative;
+    right: 0;
+    flex: 1 0 10%;
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 0 1rem;
+    margin: 0;
+    background-color: var(--color-elements);
+    border-radius: 5px;
+    border: 1.25rem solid var(--color-elements);
+    box-shadow: 1px 3px 10px rgba(0,0,0,0.3);
+    transition: ease-in-out .3s;
+}
+
+#btn-back:hover {
+    color: rgba(255,255,255,0.5)
+}
+
+#content {
+    padding: 3rem 1.5%;
+}
+
+#content {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.column {
+    flex: 1 0 50%;
+}
+
+#col1 img {
+    width: 100%;
+    background-size: cover;
+}
+
+#col2-details {
+    padding-left: 4rem;
+}
+
+#details-content div {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+#details-content div dt {
+    flex: 1 0 22%;
+}
+#details-content div dd {
+    flex: 1 0 80%;
+    padding-left: 1rem;
+}
+
+#border-list {
+    display: flex;
+    list-style-type: none;;
+}
+
+
+#border-list li {
+    flex: 1 0 2%;
+    font-size: 16px;
+    color: var(--font-color);
+    padding: 0 2px;
+    margin: 0 0 0 22px;
 }
 
 @media(max-width: 768px) {
@@ -269,4 +358,14 @@ dd.detail-description {
         max-width: 100%;
         margin: 1rem;
     }
+
+    #content {
+        flex-wrap: wrap;
+    }
+
+    #col2-details {
+        padding-left: 0;
+    }
+
+
 }
