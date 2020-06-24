@@ -196,6 +196,7 @@ body#body-details {
     background-color: var(--color-elements);
     border-radius: 5px;
     box-shadow: 1px 3px 10px rgba(0,0,0,0.2);
+    transition: all .3s;
 }
 
 .country-item:first-child,
@@ -212,6 +213,10 @@ body#body-details {
     background-size: cover;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+.country-item:hover {
+    transform: scale(1.1); 
 }
 
 .details {
