@@ -218,7 +218,7 @@ body#body-details {
 
 #countries > .country-item {
     flex: 1 0 250px;
-    height: 28rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
