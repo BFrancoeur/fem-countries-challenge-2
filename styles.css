@@ -217,14 +217,11 @@ body#body-details {
 }
 
 #countries > .country-item {
-    /* position: relative; */
     flex: 1 0 250px;
-    height: 24rem;
+    height: 25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: flex-end; */
-    /* padding-bottom: 14rem; */
     margin: 1.5%;
     color: var(--font-color);
     background-color: var(--color-elements);
@@ -254,11 +251,6 @@ body#body-details {
 }
 
 .details {
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-end; */
-    /* flex: 1; */
-    align-self: flex-end;
     padding: 1rem;
 }
 
@@ -276,12 +268,6 @@ body#body-details {
 .details div dd {
     padding-left: 2rem;
 }
-#details-content {}
-
-#details-content div > * {
-    /* display: flex;
-    justify-content: flex-end; */
-} 
 
 dt.detail-label {
     width: 20%;  
