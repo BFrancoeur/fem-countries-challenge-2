@@ -388,6 +388,7 @@ a#btn-back:hover {
 
     #countries > .country-item {
         margin: 1rem;
+        height: 28rem;
     }
 
     #content {
