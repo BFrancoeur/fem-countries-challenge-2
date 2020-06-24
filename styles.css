@@ -217,9 +217,13 @@ body#body-details {
 }
 
 #countries > .country-item {
-    position: relative;
+    /* position: relative; */
     flex: 1 0 250px;
+    height: 24rem;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    /* align-items: flex-end; */
     /* padding-bottom: 14rem; */
     margin: 1.5%;
     color: var(--font-color);
@@ -250,9 +254,12 @@ body#body-details {
 }
 
 .details {
-    /* display: flex; */
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-end; */
+    /* flex: 1; */
+    align-self: flex-end;
     padding: 1rem;
-    margin-bottom: auto;
 }
 
 .details div {
@@ -269,10 +276,12 @@ body#body-details {
 .details div dd {
     padding-left: 2rem;
 }
+#details-content {}
 
-/* #details-content div > * {
-    display: inline-block;
-} */
+#details-content div > * {
+    /* display: flex;
+    justify-content: flex-end; */
+} 
 
 dt.detail-label {
     width: 20%;  
